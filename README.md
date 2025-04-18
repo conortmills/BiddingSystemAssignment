@@ -1,5 +1,6 @@
 ## HOW TO RUN CODE
 
+```bash
 git clone https://github.com/conortmills/BiddingSystemAssignment
 cd BiddingSystemAssignment
 npm install
