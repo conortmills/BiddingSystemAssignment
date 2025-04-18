@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## HOW TO RUN CODE
 
-## Getting Started
+git clone https://github.com/conortmills/luxor-bidding-system
+cd luxor-bidding-system
+npm install
 
-First, run the development server:
 
-```bash
+## Set up environment variables
+
+Create `.env.local` file in the root:
+
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/luxor"
+NEXTAUTH_SECRET=some-random-secret
+
+
+## Set up the database
+
+createdb luxor
+npx prisma db push
+npm run seed
+
+
+## Run the app
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+visit http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Logging in
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+use any of the seeded emails:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `user1@example.com`
+- `user2@example.com`
+..
+*no password required
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## ANSWERING QUESTIONS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## HOW WOULD I MONITOR?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Sentry for error tracking and exception alerts
 
-## Deploy on Vercel
+Health checks for monitoring uptime and API availability
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Logging key actions (bids, updates, auth events) for traceability
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Postgres metrics to catch slow queries and connection issues early
+
+## SCALABILITY AND PERFORMANCE
+
+Optimize DB access
+-indexed fields
+-reduce over-fetching with select and include
+
+Cache hot endpoints
+
+Use RSC + minimal client JS
+
+Ensure horizontal scalability with stateless architecture
+
+## DECISIONS vs OPTIMAL 
+
+*generally tried to use the suggested stack, was not familiar with shade and required refreshers with next js
+
+Simple mocked authentication vs full auth 
+
+Loading of all data upfront rather than paginating
+
+Using reload after changes rather than react query or a global state manager
+
+Polish styling + mobile optimization
+
+Improve UX by displaying higher priority content first
+
+No automated testing vs unit tests for APIs
+
+Would have spent more time testing edge cases if possible (duplicates, character miss matches, form type controls, API spamming)
