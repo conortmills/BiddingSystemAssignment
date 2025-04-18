@@ -10,7 +10,7 @@ npm install
 Create `.env.local` file in the root:
 
 DATABASE_URL="postgresql://postgres:postgres@localhost:5432/luxor"
-NEXTAUTH_SECRET=some-random-secret
+NEXTAUTH_SECRET=dev-secret
 
 
 ## Set up the database
