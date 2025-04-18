@@ -7,7 +7,8 @@ npm install
 
 ## Set up environment variables
 
-Create `.env.local` file in the root:
+Create `.env` file in the root: 
+*was having issues with .env.local and the current version of prisma
 
 DATABASE_URL="postgresql://postgres:postgres@localhost:5432/luxor"
 NEXTAUTH_SECRET=dev-secret
