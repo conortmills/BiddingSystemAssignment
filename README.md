@@ -1,7 +1,7 @@
 ## HOW TO RUN CODE
 
-git clone https://github.com/conortmills/luxor-bidding-system
-cd luxor-bidding-system
+git clone https://github.com/conortmills/BiddingSystemAssignment
+cd BiddingSystemAssignment
 npm install
 
 
