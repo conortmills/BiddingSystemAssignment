@@ -4,6 +4,7 @@
 git clone https://github.com/conortmills/BiddingSystemAssignment
 cd BiddingSystemAssignment
 npm install
+```
 
 
 ## Set up environment variables
@@ -17,15 +18,19 @@ NEXTAUTH_SECRET=dev-secret
 
 ## Set up the database
 
+```bash
 createdb luxor
 npx prisma db push
 npm run seed
+```
 
 
 ## Run the app
 
+```bash
 npm run dev
 visit http://localhost:3000
+```
 
 ## Logging in
 
